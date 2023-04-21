@@ -30,7 +30,7 @@ const Disconnected: FC = () => {
           noOfLines={2}
           textAlign="center"
         >
-          Mint your NFT. Earn $$. Level up.
+        Mint your NFT. Earn $$. Level up.
         </Heading>
         <Button
           bgColor="accent"
@@ -39,7 +39,7 @@ const Disconnected: FC = () => {
           onClick={handleClick}
         >
           <HStack>
-            <Text>become a buildoor</Text>
+            <Text>become a minter</Text>
             <ArrowForwardIcon />
           </HStack>
         </Button>
