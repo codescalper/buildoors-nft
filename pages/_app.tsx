@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <WalletContextProvider>
         <Component {...pageProps} />
-        </WalletContextProvider>
+        </WalletContextProvider>  
     </ChakraProvider>
   )
 }
