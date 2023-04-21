@@ -3,4 +3,13 @@
 }
 .wallet-adapter-button-trigger {
   background-color: #833BBE;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 10px 10px;
+  font-family: Poppins;
+}
+.wallet-adapter-button-trigger:hover{
+  color: rgb(40, 39, 37);
+  background-color: #bea83b;
+  transition: 0.3s ease-in-out;
 }
