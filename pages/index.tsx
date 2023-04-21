@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css"
 import NavBar from "../components/NavBar"
 import Disconnected from '../components/Disconnected'
 
+
 const Home: NextPage = () => {
 
   return (
