@@ -9,16 +9,28 @@ import {
 } from "@chakra-ui/react"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 
+import { useWalletModal } from "@solana/wallet-adapter-react-ui"
+import { useWallet } from "@solana/wallet-adapter-react"
+
 const Disconnected: FC = () => {
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
-    (event) => {
-      if (event.defaultPrevented) {
-        return
-      }
-    },
-    []
-  )
+    const modalState = useWalletModal()
+    const { wallet, connect } = useWallet()
+  
+    const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
+      (event) => {
+        if (event.defaultPrevented) {
+          return
+        }
+  
+        if (!wallet) {
+          modalState.setVisible(true)
+        } else {
+          connect().catch(() => {})
+        }
+      },
+      [wallet, connect, modalState]
+    )
 
   return (
     <Container>
@@ -30,16 +42,16 @@ const Disconnected: FC = () => {
           noOfLines={2}
           textAlign="center"
         >
-        Mint your NFT. Earn $$. Level up.
+          Mint your buildoor. Earn $BLD. Level up.
         </Heading>
         <Button
           bgColor="accent"
-          color="black"
+          color="white"
           maxW="380px"
           onClick={handleClick}
         >
           <HStack>
-            <Text>Become a minter</Text>
+            <Text>become a buildoor</Text>
             <ArrowForwardIcon />
           </HStack>
         </Button>
